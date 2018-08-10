@@ -802,7 +802,7 @@ CREATE TABLE IF NOT EXISTS `download` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '下载信息表';
 
-CREATE TABLE `wechat_user` (
+CREATE TABLE IF NOT EXISTS `wechat_user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增id',
   `openid` varchar(127) NOT NULL DEFAULT '' COMMENT '用户的标识，对当前公众号/小程序唯一',
   `nickname` varchar(127) NOT NULL DEFAULT '' COMMENT '用户的昵称',
