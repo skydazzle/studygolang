@@ -19,7 +19,7 @@
 					</div>
 					<h1>
 					{{if .project.Logo}}
-						<img src="{{if hasPrefix .project.Logo "http"}}{{.project.Logo}}{{else}}{{.cdn_domain}}/{{.project.Logo}}{{end}}" alt="{{.project.Name}}" width="80px" />
+						<img src="{{if hasPrefix .project.Logo "github.com/studygolang/studygolang/src/http"}}{{.project.Logo}}{{else}}{{.cdn_domain}}/{{.project.Logo}}{{end}}" alt="{{.project.Name}}" width="80px" />
 					{{end}}
 						{{.project.Category}} <u>{{.project.Name}}</u>
 					</h1>

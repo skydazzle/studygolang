@@ -111,7 +111,7 @@
     负责初始化 xorm，构造数据库对象，需要数据库操作的地方，只需要如下方式使用即可：
     
     ```go
-    import . "db"
+    import . "github.com/studygolang/studygolang/src/db"
 
     MasterDB.Where()....
     ```

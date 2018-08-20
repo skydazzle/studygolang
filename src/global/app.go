@@ -36,8 +36,8 @@ import (
 )
 
 const (
-	DefaultCDNHttp  = "http://studygolang.qiniudn.com/"
-	DefaultCDNHttps = "https://static.studygolang.com/"
+	DefaultCDNHttp  = "http://godevs.qiniudn.cn/"
+	DefaultCDNHttps = "http://static.godevs.cn/"
 )
 
 var Build string

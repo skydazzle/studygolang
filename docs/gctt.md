@@ -11,11 +11,11 @@ GCTT (Go Chinese Translation Team) 是 Go中文网（https://studygolang.com) �
 **校对**，负责将初译的文章进行文字润色、技术校对等工作。  
 **发布**，负责将校对后的文章，排版发布到 Go中文网。  
 
-## Go语言中文网功能支持
+## Go技术圈功能支持
 
 1. https://studygolang.com/gctt 提供支持
 
-2. 因为主要翻译工作通过 github 进行，最后发布，通过Go语言中文网的文章发布，需要对翻译文章做一些特别处理，比如版权说明、译者等
+2. 因为主要翻译工作通过 github 进行，最后发布，通过Go技术圈的文章发布，需要对翻译文章做一些特别处理，比如版权说明、译者等
 
 3. 和 https://github.com/studygolang/gctt 项目做对接
 

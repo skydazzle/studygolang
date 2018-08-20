@@ -58,11 +58,11 @@ VALUES
 
 INSERT INTO `website_setting` (`id`, `name`, `domain`, `title_suffix`, `favicon`, `logo`, `start_year`, `blog_url`, `reading_menu`, `docs_menu`, `slogan`, `beian`, `friends_logo`, `footer_nav`, `project_df_logo`, `index_nav`, `created_at`, `updated_at`)
 VALUES
-	(1, 'Go语言中文网', 'studygolang.com', '- Go语言中文网 - Golang中文社区', '/static/img/go.ico', '/static/img/logo1.png', 2013, 'http://blog.studygolang.com', '', '', 'Go语言中文网，中国 Golang 社区，致力于构建完善的 Golang 中文社区，Go语言爱好者的学习家园。', '京ICP备14030343号-1', '[{\"image\":\"http://qiniutek.com/images/logo-2.png\",\"url\":\"https://portal.qiniu.com/signup?code=3lfz4at7pxfma\",\"name\":\"\",\"width\":\"290px\",\"height\":\"45px\"}]', '[{\"name\":\"关于\",\"url\":\"/wiki/about\",\"outer_site\":false},{\"name\":\"贡献者\",\"url\":\"/wiki/contributors\",\"outer_site\":false},{\"name\":\"帮助推广\",\"url\":\"/wiki\",\"outer_site\":false},{\"name\":\"反馈\",\"url\":\"/topics/node/16\",\"outer_site\":false},{\"name\":\"Github\",\"url\":\"https://github.com/studygolang\",\"outer_site\":true},{\"name\":\"新浪微博\",\"url\":\"http://weibo.com/studygolang\",\"outer_site\":true},{\"name\":\"内嵌Wide\",\"url\":\"/wide/playground\",\"outer_site\":false},{\"name\":\"免责声明\",\"url\":\"/wiki/duty\",\"outer_site\":false}]', '', '[{"tab":"all"}]', '2017-05-21 10:22:00', '2017-05-21 21:30:56');
+	(1, 'Go技术圈', 'godevs.cn', '- Go技术圈 - 技术社区', '/static/img/go.ico', '/static/img/logo.png', 2013, 'http://blog.godevs.cn', '', '', 'Go技术圈，致力于构建完善的 开发 中文社区，技术爱好者的学习家园。', '京ICP备14030343号-1', '[{\"image\":\"http://qiniutek.com/images/logo-2.png\",\"url\":\"https://portal.qiniu.com/signup?code=3lfz4at7pxfma\",\"name\":\"\",\"width\":\"290px\",\"height\":\"45px\"}]', '[{\"name\":\"关于\",\"url\":\"/wiki/about\",\"outer_site\":false},{\"name\":\"贡献者\",\"url\":\"/wiki/contributors\",\"outer_site\":false},{\"name\":\"帮助推广\",\"url\":\"/wiki\",\"outer_site\":false},{\"name\":\"反馈\",\"url\":\"/topics/node/16\",\"outer_site\":false},{\"name\":\"Github\",\"url\":\"https://github.com/godevs\",\"outer_site\":true},{\"name\":\"新浪微博\",\"url\":\"http://weibo.com/godevs\",\"outer_site\":true},{\"name\":\"内嵌Wide\",\"url\":\"/wide/playground\",\"outer_site\":false},{\"name\":\"免责声明\",\"url\":\"/wiki/duty\",\"outer_site\":false}]', '', '[{"tab":"all"}]', '2017-05-21 10:22:00', '2017-05-21 21:30:56');
 
 INSERT INTO `friend_link` (`id`, `name`, `url`, `seq`, `logo`, `created_at`)
 VALUES
-	(1, 'Go语言中文网', 'http://studygolang.com', 0, '', '2017-05-21 14:52:07');
+	(1, 'Go技术圈', 'http://godevs.cn', 0, '', '2017-05-21 14:52:07');
 
 INSERT INTO `user_setting` (`id`, `key`, `value`, `remark`, `created_at`)
 VALUES

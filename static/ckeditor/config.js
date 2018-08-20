@@ -1,7 +1,7 @@
 var MyEditorExtraPlugins = 'codesnippet,image2,uploadimage,notification,widget,lineutils,justify,autolink';
 
 var MyEditorConfig = {
-    title: 'Go语言中文网富文本编辑器',
+    title: 'Go技术圈富文本编辑器',
     // Define the toolbar: http://docs.ckeditor.com/#!/guide/dev_toolbar
     // The standard preset from CDN which we used as a base provides more features than we need.
     // Also by default it comes with a 2-line toolbar. Here we put all buttons in a single row.

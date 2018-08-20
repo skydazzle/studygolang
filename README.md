@@ -8,9 +8,9 @@ studygolang
 ~~收到不少人反馈，网站访问不了，初步判断，上海电信和广东电信遇到比较多，如果您访问不了，请通过 https://golang.top 访问~~
 > 增加了一台阿里云服务器，问题已解决。如果还有问题，请联系我们：polaris@studygolang.com。
 
-目前在线运行的是 Master。欢迎有兴趣的 gopher 们参与进来，一起构建一个完善的 Go 语言中文网，Go 语言爱好者的学习家园，参与方式请参考：https://studygolang.com/topics/4092
+目前在线运行的是 Master。欢迎有兴趣的 gopher 们参与进来，一起构建一个完善的 Go 语言中文网，Go 语言爱好者的学习家园，参与方式请参考：http://godevs.cn/topics/4092
 
-# 本地搭建一个 Go语言中文网 #
+# 本地搭建一个 Go技术圈 #
 
 ## 步骤一
 
@@ -143,5 +143,5 @@ A: 因为 studygolang 项目本身是一个完整的项目，而且目录结构�
 
 # 使用该项目搭建的网站
 
-- [Go语言中文网](https://studygolang.com)
+- [Go技术圈](http://godevs.cn)
 - [Kotlin中国](https://kotlintc.com)
