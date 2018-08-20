@@ -16,7 +16,7 @@
 # # and in production environment just put this binary file in jockerxu/ubuntu-golang and run it
 
 
-FROM registry.cn-shenzhen.aliyuncs.com/bookoco/bookoco-base:latest
+FROM partlab/ubuntu-golang:latest
 
 # download dep
 RUN go get github.com/polaris1119/gvt
