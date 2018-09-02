@@ -22,8 +22,7 @@ FROM golang:1.9
 RUN go get github.com/polaris1119/gvt
 WORKDIR /studygolang
 COPY . /studygolang
-# RUN cd src/ && gvt restore
-RUN cd src/
+RUN cd src/ && gvt restore
 RUN mkdir -p /vendor/src/ && mv src/vendor/* /vendor/src/
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ENV GOPATH $GOPATH:/vendor
