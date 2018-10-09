@@ -33,7 +33,7 @@
 	}
 
 	jQuery(document).ready(function($) {
-		// 发布主题
+		// 发布话题
 		$('#submit').on('click', function(evt){
 			evt.preventDefault();
 			var validator = $('.validate-form').validate();

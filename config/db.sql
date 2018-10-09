@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `topics` (
   PRIMARY KEY (`tid`),
   KEY `uid` (`uid`),
   KEY `nid` (`nid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '主题内容表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '话题内容表';
 
 CREATE TABLE IF NOT EXISTS `topics_ex` (
   `tid` int unsigned NOT NULL,
@@ -51,16 +51,16 @@ CREATE TABLE IF NOT EXISTS `topics_ex` (
   `like` int unsigned NOT NULL DEFAULT 0 COMMENT '喜欢数',
   `mtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`tid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '主题扩展表（计数）';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '话题扩展表（计数）';
 
 CREATE TABLE IF NOT EXISTS `topic_append` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `tid` int unsigned NOT NULL DEFAULT 0 COMMENT '主题 TID',
+  `tid` int unsigned NOT NULL DEFAULT 0 COMMENT '话题 TID',
   `content` text NOT NULL COMMENT '附言内容',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `tid` (`tid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '主题附言表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '话题附言表';
 
 CREATE TABLE IF NOT EXISTS `topics_node` (
   `nid` int unsigned NOT NULL AUTO_INCREMENT,
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `topics_node` (
   `ename` varchar(15) NOT NULL DEFAULT '' COMMENT '节点英文名，用于导航',
   `intro` varchar(127) NOT NULL DEFAULT '' COMMENT '节点简介',
   `seq` smallint unsigned NOT NULL DEFAULT 0 COMMENT '节点排序，小的在前',
-  `show_index` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT '主题是否在首页显示',
+  `show_index` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT '话题是否在首页显示',
   `ctime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`nid`),
   INDEX `idx_ename` (`ename`)
@@ -601,10 +601,10 @@ CREATE TABLE IF NOT EXISTS `feed` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(127) NOT NULL DEFAULT '' COMMENT '标题',
   `objid` int unsigned NOT NULL DEFAULT 0 COMMENT '对象id',
-  `objtype` tinyint unsigned NOT NULL DEFAULT 0 COMMENT '类型,0-主题;1-文章;2-资源;3-wiki;4-project',
+  `objtype` tinyint unsigned NOT NULL DEFAULT 0 COMMENT '类型,0-话题;1-文章;2-资源;3-wiki;4-project',
   `uid` int unsigned NOT NULL DEFAULT 0 COMMENT '发布人UID',
   `author` varchar(31) NOT NULL DEFAULT '' COMMENT '外站作者',
-  `nid` int unsigned NOT NULL DEFAULT 0 COMMENT '主题的nid或资源的catid',
+  `nid` int unsigned NOT NULL DEFAULT 0 COMMENT '话题的nid或资源的catid',
   `lastreplyuid` int unsigned NOT NULL DEFAULT 0 COMMENT '最后回复者',
   `lastreplytime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后回复时间',
   `tags` varchar(63) NOT NULL DEFAULT '' COMMENT 'tag，逗号分隔',

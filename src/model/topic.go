@@ -26,7 +26,7 @@ const (
 	PermissionFollow        // 关注可见（暂未实现）
 )
 
-// 社区主题信息
+// 社区话题信息
 type Topic struct {
 	Tid           int       `xorm:"pk autoincr" json:"tid"`
 	Title         string    `json:"title"`
@@ -60,7 +60,7 @@ func (this *Topic) BeforeInsert() {
 	}
 }
 
-// 社区主题扩展（计数）信息
+// 社区话题扩展（计数）信息
 type TopicEx struct {
 	Tid   int       `json:"-"`
 	View  int       `json:"view"`
@@ -73,7 +73,7 @@ func (*TopicEx) TableName() string {
 	return "topics_ex"
 }
 
-// 社区主题扩展（计数）信息，用于 incr 更新
+// 社区话题扩展（计数）信息，用于 incr 更新
 type TopicUpEx struct {
 	Tid   int       `json:"-" xorm:"pk"`
 	View  int       `json:"view"`
@@ -102,7 +102,7 @@ type TopicAppend struct {
 	CreatedAt OftenTime `xorm:"<-"`
 }
 
-// 社区主题节点信息
+// 社区话题节点信息
 type TopicNode struct {
 	Nid       int       `json:"nid" xorm:"pk autoincr"`
 	Parent    int       `json:"parent"`

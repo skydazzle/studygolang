@@ -211,7 +211,7 @@ func (UserRichObserver) Update(action string, uid, objtype, objid int) {
 					topic.Title)
 
 				if uid != topic.Uid {
-					// 主题发起人获得收益
+					// 话题发起人获得收益
 					replyDesc := fmt.Sprintf(`收到 <a href="/user/%s">%s</a> 的回复 › <a href="/topics/%d">%s</a>`,
 						user.Username,
 						user.Username,
@@ -221,7 +221,7 @@ func (UserRichObserver) Update(action string, uid, objtype, objid int) {
 					DefaultUserRich.IncrUserRich(author, model.MissionTypeReplied, 5, replyDesc)
 				}
 			} else {
-				desc = fmt.Sprintf(`创建了长度为 %d 个字符的主题 › <a href="/topics/%d">%s</a>`,
+				desc = fmt.Sprintf(`创建了长度为 %d 个字符的话题 › <a href="/topics/%d">%s</a>`,
 					utf8.RuneCountInString(topic.Content),
 					objid,
 					topic.Title)
@@ -359,7 +359,7 @@ func (UserRichObserver) Update(action string, uid, objtype, objid int) {
 		typ = model.MissionTypeAppend
 		award = -15
 		topic := DefaultTopic.findByTid(objid)
-		desc = fmt.Sprintf(`为主题 › <a href="/topics/%d">%s</a> 增加附言`,
+		desc = fmt.Sprintf(`为话题 › <a href="/topics/%d">%s</a> 增加附言`,
 			topic.Tid,
 			topic.Title)
 	} else if action == actionTop {
@@ -369,7 +369,7 @@ func (UserRichObserver) Update(action string, uid, objtype, objid int) {
 		switch objtype {
 		case model.TypeTopic:
 			topic := DefaultTopic.findByTid(objid)
-			desc = fmt.Sprintf(`将主题 › <a href="/topics/%d">%s</a> 置顶`,
+			desc = fmt.Sprintf(`将话题 › <a href="/topics/%d">%s</a> 置顶`,
 				topic.Tid,
 				topic.Title)
 		case model.TypeArticle:

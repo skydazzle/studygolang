@@ -100,7 +100,7 @@ func GenSitemap() {
 	little = 1
 	large = little + step
 
-	// 主题（帖子）
+	// 话题（帖子）
 	topics := make([]*model.Topic, 0)
 	for {
 		sitemapFile := "sitemap_topic_" + strconv.Itoa(large) + ".xml"

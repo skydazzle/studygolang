@@ -10,7 +10,7 @@
 		</ol>
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="{{if eq .objtype 1}}active{{end}}"><a href="/favorites/{{.user.Username}}">博文</a></li>
-			<li role="presentation" class="{{if eq .objtype 0}}active{{end}}"><a href="/favorites/{{.user.Username}}?objtype=0">主题</a></li>
+			<li role="presentation" class="{{if eq .objtype 0}}active{{end}}"><a href="/favorites/{{.user.Username}}?objtype=0">话题</a></li>
 			<li role="presentation" class="{{if eq .objtype 4}}active{{end}}"><a href="/favorites/{{.user.Username}}?objtype=4">开源项目</a></li>
 			<li role="presentation" class="{{if eq .objtype 2}}active{{end}}"><a href="/favorites/{{.user.Username}}?objtype=2">资源</a></li>
 		</ul>
@@ -110,7 +110,7 @@
 		</article>
 		{{else}}
 		<div class="box_white">
-			<p class="no-record text-center">{{if $.me}}{{if eq $.me.Username $.user.Username}}您{{else}}TA{{end}}{{else}}TA{{end}}还未收藏任何主题</p>
+			<p class="no-record text-center">{{if $.me}}{{if eq $.me.Username $.user.Username}}您{{else}}TA{{end}}{{else}}TA{{end}}还未收藏任何话题</p>
 		</div>
 		{{end}}
 		{{end}}

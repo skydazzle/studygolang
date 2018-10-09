@@ -29,7 +29,7 @@ type TopicLogic struct{}
 
 var DefaultTopic = TopicLogic{}
 
-// Publish 发布主题。入topics和topics_ex库
+// Publish 发布话题。入topics和topics_ex库
 func (self TopicLogic) Publish(ctx context.Context, me *model.Me, form url.Values) (tid int, err error) {
 	objLog := GetLogger(ctx)
 
@@ -63,7 +63,7 @@ func (self TopicLogic) Publish(ctx context.Context, me *model.Me, form url.Value
 				if node.ShowIndex {
 					award = -30
 				}
-				desc := fmt.Sprintf(`主题节点被管理员调整为 <a href="/go/%s">%s</a>`, node.Ename, node.Name)
+				desc := fmt.Sprintf(`话题节点被管理员调整为 <a href="/go/%s">%s</a>`, node.Ename, node.Name)
 				user := DefaultUser.FindOne(ctx, "uid", topic.Uid)
 				DefaultUserRich.IncrUserRich(user, model.MissionTypeModify, award, desc)
 			}
@@ -109,7 +109,7 @@ func (self TopicLogic) Publish(ctx context.Context, me *model.Me, form url.Value
 		session.Commit()
 
 		go func() {
-			// 同一个首页不显示的节点，一天发布主题数超过3个，扣 1 千铜币
+			// 同一个首页不显示的节点，一天发布话题数超过3个，扣 1 千铜币
 			topicNum, err := MasterDB.Where("uid=? AND ctime>?", me.Uid, time.Now().Format("2006-01-02 00:00:00")).Count(new(model.Topic))
 			if err != nil {
 				logger.Errorln("find today topic num error:", err)
@@ -152,7 +152,7 @@ func (self TopicLogic) Publish(ctx context.Context, me *model.Me, form url.Value
 	return
 }
 
-// Modify 修改主题
+// Modify 修改话题
 // user 修改人的（有可能是作者或管理员）
 func (TopicLogic) Modify(ctx context.Context, user *model.Me, form url.Values) (errMsg string, err error) {
 	objLog := GetLogger(ctx)
@@ -169,7 +169,7 @@ func (TopicLogic) Modify(ctx context.Context, user *model.Me, form url.Values) (
 	tid := form.Get("tid")
 	_, err = MasterDB.Table(new(model.Topic)).Id(tid).Update(change)
 	if err != nil {
-		objLog.Errorf("更新主题 【%s】 信息失败：%s\n", tid, err)
+		objLog.Errorf("更新话题 【%s】 信息失败：%s\n", tid, err)
 		errMsg = "对不起，服务器内部错误，请稍后再试！"
 		return
 	}
@@ -179,7 +179,7 @@ func (TopicLogic) Modify(ctx context.Context, user *model.Me, form url.Values) (
 	return
 }
 
-// Append 主题附言
+// Append 话题附言
 func (self TopicLogic) Append(ctx context.Context, uid, tid int, content string) error {
 	objLog := GetLogger(ctx)
 
@@ -325,7 +325,7 @@ func (TopicLogic) FindLastList(beginTime string, limit int) ([]*model.Topic, err
 	return topics, err
 }
 
-// FindRecent 获得最近的主题(uids[0]，则获取某个用户最近的主题)
+// FindRecent 获得最近的话题(uids[0]，则获取某个用户最近的话题)
 func (TopicLogic) FindRecent(limit int, uids ...int) []*model.Topic {
 	dbSession := MasterDB.OrderBy("ctime DESC").Limit(limit)
 	if len(uids) > 0 {
@@ -342,7 +342,7 @@ func (TopicLogic) FindRecent(limit int, uids ...int) []*model.Topic {
 	return topics
 }
 
-// FindByNid 获得某个节点下的主题列表（侧边栏推荐）
+// FindByNid 获得某个节点下的话题列表（侧边栏推荐）
 func (TopicLogic) FindByNid(ctx context.Context, nid, curTid string) []*model.Topic {
 	objLog := GetLogger(ctx)
 
@@ -355,7 +355,7 @@ func (TopicLogic) FindByNid(ctx context.Context, nid, curTid string) []*model.To
 	return topics
 }
 
-// FindByTids 获取多个主题详细信息
+// FindByTids 获取多个话题详细信息
 func (TopicLogic) FindByTids(tids []int) []*model.Topic {
 	if len(tids) == 0 {
 		return nil
@@ -389,7 +389,7 @@ func (self TopicLogic) FindFullinfoByTids(tids []int) []map[string]interface{} {
 	return self.fillDataForTopicInfo(topicInfos)
 }
 
-// FindByTid 获得主题详细信息（包括详细回复）
+// FindByTid 获得话题详细信息（包括详细回复）
 func (self TopicLogic) FindByTid(ctx context.Context, tid int) (topicMap map[string]interface{}, replies []map[string]interface{}, err error) {
 	objLog := GetLogger(ctx)
 
@@ -489,7 +489,7 @@ func (TopicLogic) findByTid(tid int) *model.Topic {
 	return topic
 }
 
-// findByTids 获取多个主题详细信息 包内用
+// findByTids 获取多个话题详细信息 包内用
 func (TopicLogic) findByTids(tids []int) map[int]*model.Topic {
 	if len(tids) == 0 {
 		return nil
@@ -667,7 +667,7 @@ func (TopicLogic) decodeTopicContent(ctx context.Context, topic *model.Topic) st
 // 话题回复（评论）
 type TopicComment struct{}
 
-// UpdateComment 更新该主题的回复信息
+// UpdateComment 更新该话题的回复信息
 // cid：评论id；objid：被评论对象id；uid：评论者；cmttime：评论时间
 func (self TopicComment) UpdateComment(cid, objid, uid int, cmttime time.Time) {
 	session := MasterDB.NewSession()
@@ -681,7 +681,7 @@ func (self TopicComment) UpdateComment(cid, objid, uid int, cmttime time.Time) {
 		"lastreplytime": cmttime,
 	})
 	if err != nil {
-		logger.Errorln("更新主题最后回复人信息失败：", err)
+		logger.Errorln("更新话题最后回复人信息失败：", err)
 		session.Rollback()
 		return
 	}
@@ -689,7 +689,7 @@ func (self TopicComment) UpdateComment(cid, objid, uid int, cmttime time.Time) {
 	// 更新回复数（TODO：暂时每次都更新表）
 	_, err = MasterDB.Id(objid).Incr("reply", 1).Update(new(model.TopicUpEx))
 	if err != nil {
-		logger.Errorln("更新主题回复数失败：", err)
+		logger.Errorln("更新话题回复数失败：", err)
 		session.Rollback()
 		return
 	}
@@ -721,16 +721,16 @@ func (self TopicComment) SetObjinfo(ids []int, commentMap map[int][]*model.Comme
 	}
 }
 
-// 主题喜欢
+// 话题喜欢
 type TopicLike struct{}
 
-// 更新该主题的喜欢数
+// 更新该话题的喜欢数
 // objid：被喜欢对象id；num: 喜欢数(负数表示取消喜欢)
 func (self TopicLike) UpdateLike(objid, num int) {
 	// 更新喜欢数（TODO：暂时每次都更新表）
 	_, err := MasterDB.Where("tid=?", objid).Incr("like", num).Update(new(model.TopicUpEx))
 	if err != nil {
-		logger.Errorln("更新主题喜欢数失败：", err)
+		logger.Errorln("更新话题喜欢数失败：", err)
 	}
 }
 

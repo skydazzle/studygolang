@@ -23,7 +23,7 @@ func (self TopicController) RegisterRoute(g *echo.Group) {
 	g.Match([]string{"GET", "POST"}, "/community/topic/modify", self.Modify)
 }
 
-// List 所有主题（分页）
+// List 所有话题（分页）
 func (TopicController) List(ctx echo.Context) error {
 	curPage, limit := parsePage(ctx)
 	topics, total := logic.DefaultTopic.FindByPage(ctx, nil, curPage, limit)

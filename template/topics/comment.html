@@ -8,7 +8,7 @@
 
 		<ol class="breadcrumb">
 			<li><a href="/">首页</a></li>
-			<li><a href="/topics">主题</a></li>
+			<li><a href="/topics">话题</a></li>
 			<li><a href="{{if .topic.node.ename}}/go/{{.topic.node.ename}}{{else}}/topics/node/{{.topic.node.nid}}{{end}}">{{.topic.node.name}}</a></li>
 		</ol>
 		<div class="page">
@@ -254,7 +254,7 @@ $(function(){
 			flag = 0;
 			$('.topic-content').removeClass('collapsed');
 
-			$(this).html('折叠主题 <i class="fa fa-angle-double-up" aria-hidden="true"></i>');
+			$(this).html('折叠话题 <i class="fa fa-angle-double-up" aria-hidden="true"></i>');
 
 			$('.view-all').hide();
 		} else {

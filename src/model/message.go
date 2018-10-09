@@ -37,7 +37,7 @@ type Message struct {
 
 const (
 	// 和comment中objtype保持一致（除了@）
-	MsgtypeTopicReply      = iota // 回复我的主题
+	MsgtypeTopicReply      = iota // 回复我的话题
 	MsgtypeArticleComment         // 评论我的博文
 	MsgtypeResourceComment        // 评论我的资源
 	MsgtypeWikiComment            // 评论我的Wiki页

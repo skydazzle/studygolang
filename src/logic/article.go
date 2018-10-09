@@ -695,7 +695,7 @@ func (self ArticleLogic) FindByIds(ids []int) []*model.Article {
 	return articles
 }
 
-// MoveToTopic 将该文章移到主题中
+// MoveToTopic 将该文章移到话题中
 // 有些用户总是将问题放在文章中发布
 func (self ArticleLogic) MoveToTopic(ctx context.Context, id interface{}, me *model.Me) error {
 	objLog := GetLogger(ctx)
@@ -813,7 +813,7 @@ func (self ArticleLogic) MoveToTopic(ctx context.Context, id interface{}, me *mo
 
 	// 减积分处罚作者
 	award := -20
-	desc := fmt.Sprintf(`你的《%s》并非文章，应该发布到主题中，已被管理员移到主题里 <a href="/topics/%d">%s</a>`, article.Title, topic.Tid, topic.Title)
+	desc := fmt.Sprintf(`你的《%s》并非文章，应该发布到话题中，已被管理员移到话题里 <a href="/topics/%d">%s</a>`, article.Title, topic.Tid, topic.Title)
 	DefaultUserRich.IncrUserRich(user, model.MissionTypePunish, award, desc)
 
 	// 将文章删除

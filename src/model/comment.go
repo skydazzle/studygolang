@@ -8,7 +8,7 @@ package model
 
 // 不要修改常量的顺序
 const (
-	TypeTopic    = iota // 主题
+	TypeTopic    = iota // 话题
 	TypeArticle         // 博文
 	TypeResource        // 资源
 	TypeWiki            // WIKI
@@ -35,7 +35,7 @@ var PathUrlMap = map[int]string{
 }
 
 var TypeNameMap = map[int]string{
-	TypeTopic:    "主题",
+	TypeTopic:    "话题",
 	TypeArticle:  "博文",
 	TypeResource: "资源",
 	TypeWiki:     "Wiki",

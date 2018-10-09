@@ -8,7 +8,7 @@
 
 		<ol class="breadcrumb">
 			<li><a href="/">首页</a></li>
-			<li><a href="/topics">主题</a></li>
+			<li><a href="/topics">话题</a></li>
 			<li><a href="{{if .topic.node.ename}}/go/{{.topic.node.ename}}{{else}}/topics/node/{{.topic.node.nid}}{{end}}">{{.topic.node.name}}</a></li>
 		</ol>
 		<div class="page">
@@ -36,7 +36,7 @@
 					</small>
 				</div>
 				{{if gt (distanceDay .topic.ctime) 100 }}
-				<div class="outdated">这是一个创建于 <span title="{{.topic.ctime}}" class="timeago"></span> 的主题，其中的信息可能已经有所发展或是发生改变。</div>
+				<div class="outdated">这是一个创建于 <span title="{{.topic.ctime}}" class="timeago"></span> 的话题，其中的信息可能已经有所发展或是发生改变。</div>
 				{{end}}
 				<div class="cell">
 					{{if or (not .topic.permission) .me.Status}}

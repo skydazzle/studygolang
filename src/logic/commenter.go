@@ -20,7 +20,7 @@ type Commenter interface {
 
 var commenters = make(map[int]Commenter)
 
-// 注册评论对象，使得某种类型（主题、博客等）被评论了可以回调
+// 注册评论对象，使得某种类型（话题、博客等）被评论了可以回调
 func RegisterCommentObject(objtype int, commenter Commenter) {
 	if commenter == nil {
 		panic("logic: Register commenter is nil")

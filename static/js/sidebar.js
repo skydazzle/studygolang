@@ -219,7 +219,7 @@ $(function(){
 
 			var content = '<li>会员数: <span>'+data.user+'</span> 人</li>';
 			if (data.topic > 0) {
-				content += '<li>主题数: <span>'+data.topic+'</span> 个</li>';
+				content += '<li>话题数: <span>'+data.topic+'</span> 个</li>';
 			}
 			if (data.article > 0) {
 				content += '<li>文章数: <span>'+data.article+'</span> 篇</li>';

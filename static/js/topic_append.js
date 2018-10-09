@@ -1,4 +1,4 @@
-// 主题附言相关js功能
+// 话题附言相关js功能
 (function(){
 	emojify.setConfig({
 		// emojify_tag_type : 'span',

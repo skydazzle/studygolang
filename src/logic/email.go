@@ -167,7 +167,7 @@ func (self EmailLogic) EmailNotice() {
 		logger.Errorln("find article error:", err)
 	}
 
-	// 本周热门主题
+	// 本周热门话题
 	topics, err := DefaultTopic.FindLastList(beginTime, 10)
 	if err != nil {
 		logger.Errorln("find topic error:", err)

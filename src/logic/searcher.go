@@ -101,7 +101,7 @@ func (self SearcherLogic) IndexingArticle(isAll bool) {
 	}
 }
 
-// 索引主题
+// 索引话题
 func (self SearcherLogic) IndexingTopic(isAll bool) {
 	solrClient := NewSolrClient()
 

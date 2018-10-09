@@ -28,7 +28,7 @@
 
 1. 打开 http://md.aclickall.com/
 2. 将待发布文章的 markdown 原文放入左侧内容区
-3. 代码主题 建议选择：monokai-sublime
+3. 代码话题 建议选择：monokai-sublime
 4. 点击复制
 5. 在公众号中，粘贴
 6. 如果有图片，可能需要作必要的替换

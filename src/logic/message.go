@@ -274,7 +274,7 @@ func (self MessageLogic) FindSysMsgsByUid(ctx context.Context, uid int, paginato
 			case model.MsgtypeTopicReply:
 				objTitle = topicMap[objid].Title
 				objUrl = "/topics/" + strconv.Itoa(topicMap[objid].Tid)
-				title = "回复了你的主题："
+				title = "回复了你的话题："
 			case model.MsgtypeArticleComment:
 				objTitle = articleMap[objid].Title
 				objUrl = "/articles/" + strconv.Itoa(articleMap[objid].Id)
@@ -304,7 +304,7 @@ func (self MessageLogic) FindSysMsgsByUid(ctx context.Context, uid int, paginato
 					topic := topicMap[objid]
 					objTitle = topic.Title
 					objUrl = "/topics/" + strconv.Itoa(topic.Tid) + "#commentForm"
-					title += "主题："
+					title += "话题："
 				case model.TypeArticle:
 					article := articleMap[objid]
 					objTitle = article.Title
@@ -345,7 +345,7 @@ func (self MessageLogic) FindSysMsgsByUid(ctx context.Context, uid int, paginato
 					topic := topicMap[objid]
 					objTitle = topic.Title
 					objUrl = "/topics/" + strconv.Itoa(topic.Tid)
-					title += "主题"
+					title += "话题"
 				case model.TypeArticle:
 					article := articleMap[objid]
 					objTitle = article.Title

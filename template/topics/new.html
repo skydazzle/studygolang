@@ -1,4 +1,4 @@
-{{define "title"}}{{if .topic.Tid}}修改{{else}}发布{{end}}主题 {{end}}
+{{define "title"}}{{if .topic.Tid}}修改{{else}}发布{{end}}话题 {{end}}
 {{define "content"}}
 <div class="row">
 	<div class="col-md-9 col-sm-6">
@@ -6,7 +6,7 @@
 
 		<ol class="breadcrumb">
 			<li><a href="/">首页</a></li>
-			<li><a href="/topics">主题</a></li>
+			<li><a href="/topics">话题</a></li>
 			<li class="active">{{if .topic.Tid}}编辑{{else}}发布{{end}}</li>
 		</ol>
 		<div class="page box_white">
@@ -19,7 +19,7 @@
 				<div class="form-group form-group-sm">
 					<label class="col-sm-1 control-label" for="title"><abbr>*</abbr>标题</label>
 					<div class="col-sm-11">
-						<textarea id="title" class="form-control required" style="resize: none;" rows="1" maxlength="120" name="title" autofocus="autofocus" placeholder="请输入主题标题(最多120个字），如果标题能够表达完整内容，则正文可以为空">{{.topic.Title}}</textarea>
+						<textarea id="title" class="form-control required" style="resize: none;" rows="1" maxlength="120" name="title" autofocus="autofocus" placeholder="请输入话题标题(最多120个字），如果标题能够表达完整内容，则正文可以为空">{{.topic.Title}}</textarea>
 					</div>
 				</div>
 				<div class="form-group form-group-sm">
@@ -85,7 +85,7 @@
 				
 				<div class="form-group form-group-sm cell">
 					<div class="col-sm-6 col-sm-offset-5">
-						<button type="submit" class="btn btn-default btn-sm" id="submit">{{if .topic.Tid}}提交修改{{else}}发布主题{{end}}</button> (Ctrl/Command+Enter)
+						<button type="submit" class="btn btn-default btn-sm" id="submit">{{if .topic.Tid}}提交修改{{else}}发布话题{{end}}</button> (Ctrl/Command+Enter)
 					</div>
 				</div>
 				<div class="form-group form-group-sm">
@@ -108,7 +108,7 @@
 				<span class="help-block">
 					<ul>
 						<li>
-							<span class="f13">主题标题</span>
+							<span class="f13">话题标题</span>
 							<div class="sep10"></div>
 							<div>请在标题中描述内容要点。如果一件事情在标题的长度内就已经可以说清楚，那就没有必要写正文了。</div>
 							<div class="sep10"></div>
@@ -116,7 +116,7 @@
 						<li>
 							<span class="f13">正文</span>
 							<div class="sep10"></div>
-							<div>可以在正文中为你要发布的主题添加更多细节。本站支持 Markdown 文本标记语法。</div>
+							<div>可以在正文中为你要发布的话题添加更多细节。本站支持 Markdown 文本标记语法。</div>
 							<div class="sep10"></div>
 							<div>在正式提交之前，你应该在提交按钮下方查看 Markdown 正文的实际渲染效果。</div>
 							<div class="sep10"></div>
@@ -139,9 +139,9 @@
 						<li>
 							<span class="f13">选择节点</span>
 							<div class="sep10"></div>
-							<div>在最后，请为你的主题选择一个节点。恰当的归类会让你发布的信息更加有用。</div>
+							<div>在最后，请为你的话题选择一个节点。恰当的归类会让你发布的信息更加有用。</div>
 							<div class="sep10"></div>
-							<div>你可以在主题发布后 600 秒内，对标题或者正文进行编辑。同时，在 600 秒内，你可以重新为主题选择节点。</div>
+							<div>你可以在话题发布后 600 秒内，对标题或者正文进行编辑。同时，在 600 秒内，你可以重新为话题选择节点。</div>
 							<div class="sep10"></div>
 						</li>
 					</ul>

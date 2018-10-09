@@ -1,4 +1,4 @@
-{{define "title"}}社区主题 - {{.node.name}} {{end}}
+{{define "title"}}社区话题 - {{.node.name}} {{end}}
 {{define "content"}}
 <div class="row">
 	<div class="col-md-9 col-sm-6">
@@ -6,7 +6,7 @@
 
 		<ol class="breadcrumb">
 			<li><a href="/">首页</a></li>
-			<li><a href="/topics">主题</a></li>
+			<li><a href="/topics">话题</a></li>
 			<li class="active">{{.node.name}}</li>
 		</ol>
 		<div class="box_white">
@@ -14,10 +14,10 @@
 				{{if .node.logo}}
 				<div style="float: left; display: inline-block; margin-right: 10px; margin-bottom: initial!important;"><img src="{{if hasPrefix .node.logo "github.com/studygolang/studygolang/src/http"}}{{.node.logo}}{{else}}{{.cdn_domain}}/{{.node.logo}}{{end}}?imageView2/2/w/50" border="0" align="default" width="50"></div>
 				{{end}}
-				<div style="float: right; margin-top: 10px;"><a href="/topics/new?nid={{.node.nid}}" class="btn btn-default btn-sm">发布新主题</a></div>
+				<div style="float: right; margin-top: 10px;"><a href="/topics/new?nid={{.node.nid}}" class="btn btn-default btn-sm">发布新话题</a></div>
 				<div class="title">
 					<h2>{{.node.name}}</h2>
-					<span class="total">共有 {{.total}} 个主题</span>
+					<span class="total">共有 {{.total}} 个话题</span>
 				</div>
 				<div class="desc">
 					<p class="intro">{{.node.intro}}</p>
@@ -31,17 +31,17 @@
 		<div class="box_white cell">
 			<form action="/topics/new" method="post" _lpchecked="1">
 				<input type="hidden" name="nid" value="{{.node.nid}}">
-				<input type="text" name="title" value="" class="sll" id="topic_title" placeholder="请输入主题标题，如果标题能够表达完整内容，则正文可以为空">
+				<input type="text" name="title" value="" class="sll" id="topic_title" placeholder="请输入话题标题，如果标题能够表达完整内容，则正文可以为空">
 				<div class="sep10"></div>
 				<textarea name="content" class="mll" id="topic_content" placeholder="正文" style="overflow: hidden; word-wrap: break-word; resize: none; height: 112px;" rows="10"></textarea>
 				<div class="sep10"></div>
 				<div class="text-center">
-					<input type="submit" value="创建新主题" id="submit" class="btn btn-sm btn-default">
+					<input type="submit" value="创建新话题" id="submit" class="btn btn-sm btn-default">
 				</div>
 			</form>
 			{{if not .node.show_index}}
 			<div class="sep10"></div>
-			<div class="cell_ops" style="line-height: 150%;">发布在本节点的主题，默认不会出现在首页的 <a href="/?tab=all">全部</a> tab 以及 主题的 <a href="/topics?tab=all">全部</a> tab 中。</div>
+			<div class="cell_ops" style="line-height: 150%;">发布在本节点的话题，默认不会出现在首页的 <a href="/?tab=all">全部</a> tab 以及 话题的 <a href="/topics?tab=all">全部</a> tab 中。</div>
 			{{end}}
 		</div>
 		{{end}}
@@ -178,7 +178,7 @@ $(function() {
 
 	SG.NodeTopic = function(){}
 	SG.NodeTopic.prototype = new SG.Publisher();
-	// 发布主题
+	// 发布话题
 	$('#submit').on('click', function(evt){
 		evt.preventDefault();
 

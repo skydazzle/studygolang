@@ -456,7 +456,7 @@ func (self ResourceComment) SetObjinfo(ids []int, commentMap map[int][]*model.Co
 // 资源喜欢
 type ResourceLike struct{}
 
-// 更新该主题的喜欢数
+// 更新该话题的喜欢数
 // objid：被喜欢对象id；num: 喜欢数(负数表示取消喜欢)
 func (self ResourceLike) UpdateLike(objid, num int) {
 	// 更新喜欢数（TODO：暂时每次都更新表）

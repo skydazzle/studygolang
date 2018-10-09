@@ -23,7 +23,7 @@ func (self NodeController) RegisterRoute(g *echo.Group) {
 	g.Post("/community/node/modify_seq", self.ModifySeq)
 }
 
-// List 所有主题节点
+// List 所有话题节点
 func (NodeController) List(ctx echo.Context) error {
 	treeNodes := logic.DefaultNode.FindParallelTree(ctx)
 

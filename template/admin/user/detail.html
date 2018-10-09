@@ -137,7 +137,7 @@
 			<p>
 				<label for="dau">&nbsp;</label>
 				<span class="field">
-					发布主题：<input type="checkbox" name="topic" value="1" {{if canPublish .user.DauAuth 0}}checked{{end}}>&nbsp;&nbsp;
+					发布话题：<input type="checkbox" name="topic" value="1" {{if canPublish .user.DauAuth 0}}checked{{end}}>&nbsp;&nbsp;
 					发布文章：<input type="checkbox" name="article" value="1" {{if canPublish .user.DauAuth 1}}checked{{end}}>&nbsp;&nbsp;
 					分享资源：<input type="checkbox" name="resource" value="1" {{if canPublish .user.DauAuth 2}}checked{{end}}>&nbsp;&nbsp;
 					发布Wiki：<input type="checkbox" name="wiki" value="1" {{if canPublish .user.DauAuth 3}}checked{{end}}>&nbsp;&nbsp;

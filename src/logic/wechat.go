@@ -108,7 +108,7 @@ func (self WechatLogic) AutoReply(ctx context.Context, reqData []byte) (*model.W
 	case model.WeMsgTypeText:
 		if strings.Contains(wechatMsg.Content, "晨读") {
 			return self.readingContent(ctx, wechatMsg)
-		} else if strings.Contains(wechatMsg.Content, "主题") || strings.Contains(wechatMsg.Content, "帖子") {
+		} else if strings.Contains(wechatMsg.Content, "话题") || strings.Contains(wechatMsg.Content, "帖子") {
 			return self.topicContent(ctx, wechatMsg)
 		} else if strings.Contains(wechatMsg.Content, "文章") {
 			return self.articleContent(ctx, wechatMsg)

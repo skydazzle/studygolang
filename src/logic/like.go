@@ -149,7 +149,7 @@ type Liker interface {
 	UpdateLike(int, int)
 }
 
-// 注册喜欢对象，使得某种类型（主题、博文等）被喜欢了可以回调
+// 注册喜欢对象，使得某种类型（话题、博文等）被喜欢了可以回调
 func RegisterLikeObject(objtype int, liker Liker) {
 	if liker == nil {
 		panic("logic: Register liker is nil")

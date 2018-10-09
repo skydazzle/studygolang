@@ -101,7 +101,7 @@ func (self UserRichLogic) IncrUserRich(user *model.User, typ, award int, desc st
 	)
 
 	if award > 0 && (typ == model.MissionTypeReplied || typ == model.MissionTypeActive) {
-		// 老用户，因为之前的主题被人回复而增加财富，自动帮其领取初始资本
+		// 老用户，因为之前的话题被人回复而增加财富，自动帮其领取初始资本
 		// 因为活跃奖励铜币，自动帮其领取初始资本
 		total, err = MasterDB.Where("uid=?", user.Uid).Count(new(model.UserBalanceDetail))
 		if err != nil {

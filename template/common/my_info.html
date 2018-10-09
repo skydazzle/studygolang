@@ -21,7 +21,7 @@
 	</div> -->
 	<div class="box" style="text-align: center;">
 		{{if canPublish .me.DauAuth 0}}
-		<a class="btn btn-default btn-sm" href="/topics/new">发布主题</a>&nbsp;
+		<a class="btn btn-default btn-sm" href="/topics/new">发布话题</a>&nbsp;
 		{{end}}
 		{{if canPublish .me.DauAuth 1}}
 		<a class="btn btn-default btn-sm" href="/articles/new">撰写文章</a>&nbsp;
@@ -35,6 +35,10 @@
 		{{else}}
 			{{if canPublish .me.DauAuth 4}}
 			<a class="btn btn-default btn-sm" href="/project/new">发布项目</a>&nbsp;
+			{{end}}
+
+			{{if canPublish .me.DauAuth 5}}
+                <a class="btn btn-default btn-sm" href="/book/new">发布图书</a>&nbsp;
 			{{end}}
 		{{end}}
 	</div>

@@ -18,7 +18,7 @@ var BalanceTypeMap = map[int]string{
 	MissionTypeShare:    "分享获得",
 	MissionTypeAdd:      "充值获得",
 	MissionTypeReply:    "创建回复",
-	MissionTypeTopic:    "创建主题",
+	MissionTypeTopic:    "创建话题",
 	MissionTypeArticle:  "发表文章",
 	MissionTypeResource: "分享资源",
 	MissionTypeWiki:     "创建WIKI",

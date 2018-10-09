@@ -80,7 +80,7 @@ func (TopicController) topicList(ctx echo.Context, tab, orderBy, querystring str
 	return success(ctx, data)
 }
 
-// NodeTopics 某节点下的主题列表
+// NodeTopics 某节点下的话题列表
 func (TopicController) NodeTopics(ctx echo.Context) error {
 	curPage := goutils.MustInt(ctx.QueryParam("p"), 1)
 	paginator := logic.NewPaginator(curPage)
@@ -96,7 +96,7 @@ func (TopicController) NodeTopics(ctx echo.Context) error {
 	return success(ctx, map[string]interface{}{"activeTopics": "active", "topics": topics, "page": template.HTML(pageHtml), "total": total, "node": node})
 }
 
-// Detail 社区主题详细页
+// Detail 社区话题详细页
 func (TopicController) Detail(ctx echo.Context) error {
 	tid := goutils.MustInt(ctx.QueryParam("tid"))
 	if tid == 0 {
@@ -118,12 +118,12 @@ func (TopicController) Detail(ctx echo.Context) error {
 	return success(ctx, data)
 }
 
-// Create 新建主题
+// Create 新建话题
 func (TopicController) Create(ctx echo.Context) error {
 	nodes := logic.GenNodes()
 
 	title := ctx.FormValue("title")
-	// 请求新建主题页面
+	// 请求新建话题页面
 	if title == "" || ctx.Request().Method() != "POST" {
 		return success(ctx, map[string]interface{}{"nodes": nodes, "activeTopics": "active"})
 	}
@@ -137,7 +137,7 @@ func (TopicController) Create(ctx echo.Context) error {
 	return success(ctx, map[string]interface{}{"tid": tid})
 }
 
-// Modify 修改主题
+// Modify 修改话题
 func (TopicController) Modify(ctx echo.Context) error {
 	tid := goutils.MustInt(ctx.FormValue("tid"))
 	if tid == 0 {
